@@ -15,4 +15,8 @@ public class UserFindRequest {
   public UserFindRequest(PurchaseHistoryFindRequest request) {
     this.userId = request.getUserId();
   }
+
+  public UserFindRequest() {
+
+  }
 }
