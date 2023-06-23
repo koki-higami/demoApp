@@ -17,13 +17,21 @@ public class UserInfoResponse {
     this.userId = data.getUserId();
     this.firstName = data.getFirstName();
     this.lastName = data.getLastName();
-    this.email = data.getEmail();
+    this.email = this.mask(data.getEmail());
   }
 
   public UserInfoResponse(UserUpdateResponse data) {
     this.userId = data.getUserId();
     this.firstName = data.getFirstName();
     this.lastName = data.getLastName();
-    this.email = data.getEmail();
+    this.email = this.mask(data.getEmail());
+  }
+
+  private String mask(String word) {
+    String masked = "";
+    for (int i = 0; i < word.length(); i++) {
+      masked += "*";
+    }
+    return masked;
   }
 }

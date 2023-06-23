@@ -15,14 +15,6 @@ public class UserFindResponse {
     this.userId = res.getUserId();
     this.firstName = res.getFirstName();
     this.lastName = res.getLastName();
-    this.email = this.mask(res.getEmail());
-  }
-
-  private String mask(String word) {
-    String masked = "";
-    for (int i = 0; i < word.length(); i++) {
-      masked += "*";
-    }
-    return masked;
+    this.email = res.getEmail();
   }
 }

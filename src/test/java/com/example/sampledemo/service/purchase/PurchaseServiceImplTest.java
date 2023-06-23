@@ -41,7 +41,7 @@ class PurchaseServiceImplTest {
           () -> assertEquals(1, userInfo.getUserId()),
           () -> assertEquals("test", userInfo.getFirstName()),
           () -> assertEquals("test", userInfo.getLastName()),
-          () -> assertEquals("*************", userInfo.getEmail())
+          () -> assertEquals("test-mail.com", userInfo.getEmail())
       );
 
     }

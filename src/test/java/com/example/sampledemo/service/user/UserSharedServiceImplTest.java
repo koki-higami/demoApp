@@ -28,7 +28,7 @@ class UserSharedServiceImplTest {
       assertEquals(1, expect.getUserId());
       assertEquals("test", expect.getFirstName());
       assertEquals("test", expect.getLastName());
-      assertEquals("*************", expect.getEmail());
+      assertEquals("test-mail.com", expect.getEmail());
     }
 
     @Test
@@ -59,6 +59,6 @@ class UserSharedServiceImplTest {
 
     assertEquals(4, beforeCreateUsers.size());
     assertEquals(5, afterCreateUsers.size());
-    assertEquals("*****", latestUser.getEmail());
+    assertEquals("email", latestUser.getEmail());
   }
 }
