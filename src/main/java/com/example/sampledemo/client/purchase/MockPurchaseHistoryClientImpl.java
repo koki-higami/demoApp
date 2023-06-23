@@ -15,7 +15,7 @@ public class MockPurchaseHistoryClientImpl implements PurchaseHistoryClient {
 
   private List<PurchaseHistoryFindBindResponse> histories = new ArrayList<>();
 
-  MockPurchaseHistoryClientImpl() {
+  public MockPurchaseHistoryClientImpl() {
     this.histories.add(new PurchaseHistoryFindBindResponse(1, LocalDate.now(), "tv", 10));
     this.histories.add(new PurchaseHistoryFindBindResponse(2, LocalDate.now(), "car", 10));
     this.histories.add(new PurchaseHistoryFindBindResponse(1, LocalDate.now(), "car", 1));
@@ -27,7 +27,7 @@ public class MockPurchaseHistoryClientImpl implements PurchaseHistoryClient {
       PurchaseHistoryFindBindRequest request) {
 
     List<PurchaseHistoryFindBindResponse> result =
-        histories.stream().filter(his -> his.getUserId() == request.getUserId()).toList();
+        histories.stream().filter(his -> his.getUserId().equals(request.getUserId())).toList();
 
     return ResponseEntity.ok(result);
   }
